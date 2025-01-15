@@ -8,6 +8,9 @@ on:
                 required: true
                 default: '/dev'
 
+permissions:
+  contents: read
+
 jobs:
   run-manual-job:
     runs-on: ubuntu-latest  # This specifies the runner environment (Ubuntu in this case)
