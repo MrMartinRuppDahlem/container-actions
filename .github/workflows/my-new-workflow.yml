@@ -11,7 +11,7 @@ on:
 jobs:
     manual-job:
         runs-on: ubuntu-latest
-        environment: dev
+        environment: DEV
     
         steps:
           - name: Example
@@ -26,7 +26,7 @@ jobs:
           - name: Secrets Variable
             run: echo '${{ toJSON(secrets)}}'
           - name: Env Variable
-            run: echo '${{env.MY_API_URL}}'
+            run: echo ${{ vars.MY_API_URL }}
          
 
     
