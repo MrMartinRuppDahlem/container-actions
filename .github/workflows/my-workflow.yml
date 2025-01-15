@@ -1,0 +1,18 @@
+name: Manual Workflow
+
+on:
+  push:
+    branches:
+      - main  # Trigger on commits to the 'main' branch
+  workflow_dispatch:  # Allows you to manually trigger the workflow from the GitHub UI
+
+jobs:
+  run-manual-job:
+    runs-on: ubuntu-latest  # This specifies the runner environment (Ubuntu in this case)
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3  # Checkout the repository's code
+
+      - name: Run a blank step
+        run: echo "This is a placeholder step for your manual workflow."
