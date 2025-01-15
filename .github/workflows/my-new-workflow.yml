@@ -9,7 +9,7 @@ on:
                 default: '/dev'
 
 jobs:
-    manual-job:
+    manual-job-dev:
         runs-on: ubuntu-latest
         environment: DEV
     
@@ -27,6 +27,24 @@ jobs:
             run: echo '${{ toJSON(secrets)}}'
           - name: Env Variable
             run: echo ${{ vars.MY_API_URL }}
-         
+
+    manual-job-prod:
+        runs-on: ubuntu-latest
+        environment: production
+    
+        steps:
+          - name: Example
+            run: |
+             echo "Mon exemple"
+             echo "Env Name: ${{ github.event.inputs.Environment }}"
+          - name: Github Variable
+            run: echo '${{ toJSON(github)}}'
+
+          - name: Runner Variable
+            run: echo '${{ toJSON(runner)}}'
+          - name: Secrets Variable
+            run: echo '${{ toJSON(secrets)}}'
+          - name: Env Variable
+            run: echo ${{ vars.MY_API_URL }}         
 
     
