@@ -1,9 +1,6 @@
 name: Manual Workflow
 
 on:
-  push:
-    branches:
-      - main  # Trigger on commits to the 'main' branch
   workflow_dispatch:  # Allows you to manually trigger the workflow from the GitHub UI
         inputs:
             Environment:
