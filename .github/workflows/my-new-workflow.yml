@@ -14,7 +14,9 @@ jobs:
     
         steps:
           - name: Example
-            run: echo "Mon exemple"
+            run: |
+             echo "Mon exemple"
+             echo "Env Name: ${{ github.event.inputs.Environment }}"
 
 
     
