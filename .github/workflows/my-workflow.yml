@@ -14,6 +14,16 @@ permissions:
 jobs:
   run-manual-job:
     runs-on: ubuntu-latest  # This specifies the runner environment (Ubuntu in this case)
+
+    # Run a local registry to push to
+    services:
+        registry:
+          image: registry:2
+          ports:
+            - 5001:5000
+  
+    env:
+        TEST_TAG: localhost:5001/actions/container-action:latest
     
     steps:
       - name: Checkout code
